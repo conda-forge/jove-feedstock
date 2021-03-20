@@ -1,5 +1,5 @@
 {% set name = "jove" %}
-{% set version = "4.17.3.6" %}
+{% set version = "4.17.3.7" %}
 
 
 package:
@@ -11,10 +11,10 @@ source:
   # https://github.com/jonmacs/jove/releases/download/{{ version }}/jove-{{ version }}.tgz
   # This is the (smaller) automatic snapshot of the files under version control:
   url: https://github.com/jonmacs/jove/archive/{{ version }}.tar.gz
-  sha256: a7c6644822a010a7baf4997f95c80b9419ce49b3dcad959325a3b1b035b85a65
+  sha256: b3918b94cc7fa973c7ebaf17cae25bf9643281ed4129265155abc3837ddf22bf
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   script: 'make -f Makefile.msc && cp jjove.exe "$PREFIX/bin/jove.exe"'  # [win]
   script: 'make JOVEHOME="$PREFIX" SYSDEFS=-DDarwin install'  # [osx]
