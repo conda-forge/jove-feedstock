@@ -7,11 +7,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/jonmacs/jove/releases/download/{{ version }}/jove-{{ version }}.tgz
-  sha256: 94300bed2b73b3b964fe9e42c652175525609d3ebf6fdefd2291d277b5ae27a2
+  # This is an asset usually uploaded to the GitHub release by the maintainers:
+  # https://github.com/jonmacs/jove/releases/download/{{ version }}/jove-{{ version }}.tgz
+  # This is the (smaller) automatic snapshot of the files under version control:
+  url: https://github.com/jonmacs/jove/archive/{{ version }}.tar.gz
+  sha256: a7c6644822a010a7baf4997f95c80b9419ce49b3dcad959325a3b1b035b85a65
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script: 'make -f Makefile.msc && cp jjove.exe "$PREFIX/bin/jove.exe"'  # [win]
   script: 'make JOVEHOME="$PREFIX" SYSDEFS=-DDarwin install'  # [osx]
@@ -30,8 +33,7 @@ test:
 about:
   home: https://github.com/jonmacs/jove/
   license: LicenseRef-JOVE
-  # JOVE_LICENSE.txt is a local copy of start of upstream README
-  license_file: JOVE_LICENSE.txt
+  license_file: LICENSE
   summary: JOVE - Jonathan's Own Version of Emacs
   description: |
     Jove is a compact, powerful Emacs-style text-editor. It provides the
