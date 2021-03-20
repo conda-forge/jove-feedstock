@@ -1,8 +1,3 @@
 *.pyc
 
 build_artifacts
-
-# Ignore any locally downed tarballs
-# e.g. from finding new release checksums:
-*.tgz
-*.tar.gz
