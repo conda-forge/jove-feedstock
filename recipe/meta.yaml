@@ -23,6 +23,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - make
   host:
     - ncurses  # [not win]
 
