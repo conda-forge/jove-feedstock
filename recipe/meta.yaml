@@ -1,5 +1,5 @@
 {% set name = "jove" %}
-{% set version = "4.17.3.8" %}
+{% set version = "4.17.4.1" %}
 
 
 package:
@@ -11,14 +11,14 @@ source:
   # https://github.com/jonmacs/jove/releases/download/{{ version }}/jove-{{ version }}.tgz
   # This is the (smaller) automatic snapshot of the files under version control:
   url: https://github.com/jonmacs/jove/archive/{{ version }}.tar.gz
-  sha256: c286e6bdb384c0e62f5395cbe035464e441eb2ffd7787880803a0877a9b1acb1
+  sha256: 3fd763625367962de39a66b8fa103b41e17c87d3a0bdf9cac7a93e26e135198c
 
 build:
   number: 0
   skip: true  # [win]
-  script: 'make -f Makefile.msc && cp jjove.exe "$PREFIX/bin/jove.exe"'  # [win]
-  script: 'make JOVEHOME="$PREFIX" SYSDEFS=-DDarwin TERMCAPLIB=-lncurses install'  # [osx]
-  script: 'make JOVEHOME="$PREFIX" SYSDEFS=-DLinux LDFLAGS="$LDFLAGS " TERMCAPLIB=-lncurses install'  # [linux]
+  script: make -f Makefile.msc && cp jjove.exe "$PREFIX/bin/jove.exe"  # [win]
+  script: make JOVEHOME="$PREFIX" SYSDEFS=-DDarwin TERMCAPLIB=-lncurses install  # [osx]
+  script: make JOVEHOME="$PREFIX" SYSDEFS=-DLinux LDFLAGS="$LDFLAGS " TERMCAPLIB=-lncurses install  # [linux]
 
 requirements:
   build:
