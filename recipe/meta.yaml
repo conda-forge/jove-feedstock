@@ -1,5 +1,5 @@
 {% set name = "jove" %}
-{% set version = "4.17.3.8" %}
+{% set version = "4.17.4.0" %}
 
 
 package:
@@ -11,7 +11,7 @@ source:
   # https://github.com/jonmacs/jove/releases/download/{{ version }}/jove-{{ version }}.tgz
   # This is the (smaller) automatic snapshot of the files under version control:
   url: https://github.com/jonmacs/jove/archive/{{ version }}.tar.gz
-  sha256: c286e6bdb384c0e62f5395cbe035464e441eb2ffd7787880803a0877a9b1acb1
+  sha256: a4d1202b5e54be677756b08150c755c7882afb9e58f6a3dabc70d732a08856d7
 
 build:
   number: 0
