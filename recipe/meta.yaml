@@ -15,7 +15,7 @@ source:
 
 build:
   number: 1
-  script: make -f Makefile.msc && cp jjove.exe "$PREFIX/bin/jove.exe"  # [win]
+  script: make JOVEHOME="$PREFIX" SYSDEFS=-DMINGW XEXT=.exe EXTRAOBJS=win32.o install  # [win]
   script: make JOVEHOME="$PREFIX" SYSDEFS=-DDarwin TERMCAPLIB=-lncurses install  # [osx]
   script: make JOVEHOME="$PREFIX" SYSDEFS=-DLinux LDFLAGS="$LDFLAGS " TERMCAPLIB=-lncurses install  # [linux]
 
