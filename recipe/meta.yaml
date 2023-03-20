@@ -12,17 +12,20 @@ source:
   # This is the (smaller) automatic snapshot of the files under version control:
   url: https://github.com/jonmacs/jove/archive/{{ version }}.tar.gz
   sha256: e28836e23001b79cd2d2e9e0174de426be46388e28b7086c57d3d072481af9b8
+  patches:
+    - windows.patch  # [win]
 
 build:
-  number: 0
-  skip: true  # [win]
-  script: make -f Makefile.msc && cp jjove.exe "$PREFIX/bin/jove.exe"  # [win]
+  number: 1
+  script: make JOVEHOME="%PREFIX%" SYSDEFS=-DMINGW XEXT=.exe EXTRAOBJS=win32.o install  # [win]
   script: make JOVEHOME="$PREFIX" SYSDEFS=-DDarwin TERMCAPLIB=-lncurses install  # [osx]
   script: make JOVEHOME="$PREFIX" SYSDEFS=-DLinux LDFLAGS="$LDFLAGS " TERMCAPLIB=-lncurses install  # [linux]
 
 requirements:
   build:
-    - {{ compiler('c') }}
+    - {{ compiler('c') }}  # [unix]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - m2-inetutils  # [win]
     - make
     - groff  # [linux]
   host:
