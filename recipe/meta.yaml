@@ -25,6 +25,7 @@ requirements:
   build:
     - {{ compiler('c') }}  # [unix]
     - {{ compiler('m2w64_c') }}  # [win]
+    - inetutils  # [win]
     - make
     - groff  # [linux]
   host:
