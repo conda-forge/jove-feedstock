@@ -5,7 +5,7 @@
  JETCDIR = /etc/jove
  DETCDIR = $(DESTDIR)$(JETCDIR)
 -JTMPDIR = /var/tmp
-+JTMPDIR = $(TEMP)
++JTMPDIR = $(HOMEDRIVE)/Users/$(USERNAME)/AppData/Local/Temp
  JRECDIR = /var/lib/jove/preserve
  DRECDIR = $(DESTDIR)$(JRECDIR)
  
