@@ -1,11 +1,20 @@
 --- Makefile	2023-03-20 10:21:14.000000000 +0000
-+++ Makefile.new	2023-03-20 10:21:11.000000000 +0000
++++ Makefile.new	2023-03-20 13:54:38.000000000 +0000
 @@ -62,7 +62,7 @@
  
  JETCDIR = /etc/jove
  DETCDIR = $(DESTDIR)$(JETCDIR)
 -JTMPDIR = /var/tmp
-+JTMPDIR = $(HOMEDRIVE)/Users/$(USERNAME)/AppData/Local/Temp
++JTMPDIR = %TMP%
  JRECDIR = /var/lib/jove/preserve
  DRECDIR = $(DESTDIR)$(JRECDIR)
  
+@@ -211,7 +211,7 @@
+ TROFFPOST = |grops
+ TROFFPDF = |gropdf
+ 
+-MANUALS = $(JOVEM) $(TEACHJOVEM)
++MANUALS =
+ 
+ C_SRC = commands.c commands.tab abbrev.c argcount.c ask.c buf.c c.c case.c jctype.c \
+ 	delete.c disp.c extend.c fp.c fmt.c insert.c io.c iproc.c \
