@@ -12,6 +12,8 @@ source:
   # This is the (smaller) automatic snapshot of the files under version control:
   url: https://github.com/jonmacs/jove/archive/{{ version }}.tar.gz
   sha256: e28836e23001b79cd2d2e9e0174de426be46388e28b7086c57d3d072481af9b8
+  patches:
+    - windows.patch  # [win]
 
 build:
   number: 1
