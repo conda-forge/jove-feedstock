@@ -1,4 +1,11 @@
-65c65
-< JTMPDIR = /var/tmp
----
-> JTMPDIR = %TMP%
+--- Makefile	2023-03-20 10:21:14.000000000 +0000
++++ Makefile.new	2023-03-20 10:21:11.000000000 +0000
+@@ -62,7 +62,7 @@
+ 
+ JETCDIR = /etc/jove
+ DETCDIR = $(DESTDIR)$(JETCDIR)
+-JTMPDIR = /var/tmp
++JTMPDIR = %TMP%
+ JRECDIR = /var/lib/jove/preserve
+ DRECDIR = $(DESTDIR)$(JRECDIR)
+ 
