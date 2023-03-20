@@ -1,11 +1,11 @@
-About jove
-==========
+About jove-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jove-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/jonmacs/jove/
 
 Package license: LicenseRef-JOVE
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jove-feedstock/blob/main/LICENSE.txt)
 
 Summary: JOVE - Jonathan's Own Version of Emacs
 
