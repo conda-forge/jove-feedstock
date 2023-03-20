@@ -1,18 +1,18 @@
---- Makefile	2023-03-20 10:21:14.000000000 +0000
-+++ Makefile.new	2023-03-20 13:54:38.000000000 +0000
-@@ -62,7 +62,7 @@
+--- Makefile	2023-03-20 14:18:15.000000000 +0000
++++ Makefile.new	2023-03-20 14:20:32.000000000 +0000
+@@ -66,7 +66,7 @@
  
  JETCDIR = /etc/jove
  DETCDIR = $(DESTDIR)$(JETCDIR)
 -JTMPDIR = /var/tmp
-+JTMPDIR = %TMP%
++JTMPDIR = $(HOMEDRIVE)/Users/$(USERNAME)/AppData/Local/Temp
  JRECDIR = /var/lib/jove/preserve
  DRECDIR = $(DESTDIR)$(JRECDIR)
+ # Install permission for DRECDIR
+@@ -216,7 +216,7 @@
+ TROFFPOST = |gro$(TDEV)
  
-@@ -211,7 +211,7 @@
- TROFFPOST = |grops
- TROFFPDF = |gropdf
- 
+ # installed man pages
 -MANUALS = $(JOVEM) $(TEACHJOVEM)
 +MANUALS =
  
