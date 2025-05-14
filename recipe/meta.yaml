@@ -25,7 +25,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - make
-    - groff  # [linux]
+    - groff  # [not win]
   host:
     - ncurses  # [not win]
 
